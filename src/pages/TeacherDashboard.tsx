@@ -1,12 +1,12 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Bell, LogOut, Menu, MessageSquare, UserCircle } from "lucide-react";
+import { LogOut, Menu, UserCircle } from "lucide-react";
 import TeacherSalary from "@/components/TeacherSalary";
 import StudentProgress from "@/components/StudentProgress";
 import MessageCenter from "@/components/MessageCenter";
+import { NotificationBar } from "@/components/NotificationBar";
 
 const TeacherDashboard = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,12 +26,7 @@ const TeacherDashboard = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <button className="relative">
-                <Bell className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">
-                  5
-                </span>
-              </button>
+              <NotificationBar />
               <div className="hidden md:flex items-center space-x-2">
                 <UserCircle className="h-6 w-6" />
                 <span className="font-medium">Dr. Rebecca Wilson</span>
